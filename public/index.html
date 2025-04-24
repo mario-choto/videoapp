@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Call Lobby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body { font-family: sans-serif; text-align: center; padding: 20px; }
+      video { width: 100%; max-width: 480px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+      button { padding: 10px 20px; font-size: 16px; }
+    </style>
+  </head>
+  <body>
+    <h2>Lobby</h2>
+    <p>Enter your name to join the call lobby:</p>
+    <input type="text" id="username" placeholder="Your name">
+    <button id="joinBtn">Join Lobby</button>
+
+    <div id="callArea" style="display:none;">
+      <h3>Connected!</h3>
+      <video id="localVideo" autoplay muted playsinline></video>
+      <video id="remoteVideo" autoplay playsinline></video>
+      <button id="callBtn">Start Call</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="lobby.js"></script>
+  </body>
+</html>
